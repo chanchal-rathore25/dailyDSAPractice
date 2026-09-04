@@ -5,16 +5,17 @@ using namespace std;
 bool isValidParanthesis(string s){
     stack<char> str;
     for(char i : s){
-        if(i == '(' || i == '{' || i == '['){
+        if(i == '(' || i == '{' || i == '['){ //opening
             str.push(i);
-        }else if(i == ')' && !str.empty() && str.top() == '('){
-            str.pop();
-        }else if(i == '}' && !str.empty() && str.top() == '{'){
-            str.pop();
-        }else if(i == ']' && !str.empty() && str.top() == '['){
-            str.pop();
         }else{
-            return false;
+            if(str.empty()){
+                return false;
+            }
+            if(str.top() == "(" && i == ")" ||
+             str.top() =="{" && i =="}" || 
+             str.top() == "[" && i == "]"){ //closing
+                    str.pop();
+            }
         }
     }
     return str.empty();
