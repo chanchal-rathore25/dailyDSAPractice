@@ -11,9 +11,9 @@ bool isValidParanthesis(string s){
             if(str.empty()){
                 return false;
             }
-            if(str.top() == "(" && i == ")" ||
-             str.top() =="{" && i =="}" || 
-             str.top() == "[" && i == "]"){ //closing
+            if((str.top() == '(' && i == ')') ||
+             (str.top() == '{' && i == '}') ||
+             (str.top() == '[' && i == ']')){ //closing
                     str.pop();
             }
         }
