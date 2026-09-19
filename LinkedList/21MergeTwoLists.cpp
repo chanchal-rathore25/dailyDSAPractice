@@ -28,15 +28,17 @@ public:
 
 int main(){
     Solution sol;
-    ListNode* head1 = new ListNode(3);
+    ListNode* head1 = new ListNode(2);
     head1->next = new ListNode(2);
-    head1->next->next = new ListNode(0);
-    head1->next->next->next = new ListNode(-4);
-    head1->next->next->next->next = head1->next; // Creating a cycle
+    head1->next->next = new ListNode(4);
+    ListNode* head2 = new ListNode(1);
+    head2->next = new ListNode(3);
+    head2->next->next = new ListNode(4);
+    
 
-    ListNode* res = sol.mergeTwoLists(head1, nullptr);
+    ListNode* res = sol.mergeTwoLists(head1, head2);
     if(res != NULL){
-        cout << "Reversed list values: ";
+        cout << "merge list : ";
         ListNode* temp = res;
         while(temp != NULL){
             cout << temp->val << " ";
