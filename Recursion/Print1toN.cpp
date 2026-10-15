@@ -7,18 +7,13 @@ void printNumber(int i,int n){
         return ;
     }
 
-    cout<<i<<endl;
     printNumber(i+1,n);
+    cout<<i<<endl;
 }
 
 int main(){
-    int n,i;
-    cout << "Enter the starting no. : ";
-    cin>>i;
-    cout<<"Enter the ending no. : ";
-    cin>>n;
-    
-  
+    int n = 3;
+    int i = 1;
     printNumber(i,n);
     return 0;
 }
